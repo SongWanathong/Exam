@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="question-section">
+
+    </div>
+    <button style="margin-top: 15px;" onclick="checkUserAnswerAllQuestionAndCheckAnswer()">Submit</button>
+    
+  
+ 
+
+    <script>
+
+
+
+        const myQuestions =
+            [
+                {
+                    question: "1 + 2 is ?",
+                    answers: ["1", "2", "3"],
+                    correctAnswer: 2
+                },
+                {
+                    question: "What is the best site for Web Programmer ?",
+                    answers: ["Stack Overﬂow", "Quora", "w3school"],
+                    correctAnswer: 0
+                },
+                {
+                    question: "Who is Prime minister fo Thailand ?",
+                    answers: ["Prayut Chan-o-cha", "Yingluck Shinawatra", "Abhisit Vejjajiva", "Somchai Wongsawat"],
+                    correctAnswer: 0
+                }
+            ];
+
+
+        renderQuestion()
+        function renderQuestion() {
+           let number,id,inputname = 0
+           number=0
+            let renderQuestions = myQuestions.map(myQuestion =>{
+              return (`<p> ${++number}: ${myQuestion.question}</p>
+                     ${myQuestion.answers.map(answer => 
+                    `
+                    <input type="radio" id=${answer} name=${inputname} value=${answer}> 
+                    <label for=${answer}>${answer}</label>
+                    `
+                     )}
+                     <div  id=${inputname++ +10}>  </div>
+                    
+                `)
+                
+                }
+            )
+            document.getElementById('question-section').innerHTML = renderQuestions
+
+        }
+
+    
+        function checkUserAnswerAllQuestionAndCheckAnswer()
+
+        {
+           let Answer1a= document.getElementById('1')
+           let Answer1b= document.getElementById('2')
+           let Answer1c = document.getElementById('3')
+           let Answer2a= document.getElementById('Stack')
+           let Answer2b= document.getElementById('Quora')
+           let Answer2c = document.getElementById('w3school')
+           let Answer3a= document.getElementById('Prayut')
+           let Answer3b= document.getElementById('Yingluck')
+           let Answer3c = document.getElementById('Abhisit')
+           let Answer3d = document.getElementById('Somchai')
+
+
+            if(!Answer1a.checked &&!Answer1b.checked&&!Answer1c.checked){
+          document.getElementById('10').innerHTML = '😥You have not answered'
+            }else{
+          document.getElementById('10').innerHTML = (Answer1c.checked ===true) ? '✔':'✖'
+            }
+
+            if(!Answer2a.checked &&!Answer2b.checked&&!Answer2c.checked){
+          document.getElementById('11').innerHTML = '😥You have not answered'
+            }else{
+          document.getElementById('11').innerHTML = (Answer2a.checked ===true) ? '✔':'✖'
+            }
+           
+            if(!Answer3a.checked &&!Answer3b.checked&&!Answer3c.checked&&!Answer3d.checked){
+          document.getElementById('12').innerHTML = '😥You have not answered'
+            }else{
+          document.getElementById('12').innerHTML = (Answer3a.checked ===true) ? '✔':'✖'
+            }
+           
+           
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

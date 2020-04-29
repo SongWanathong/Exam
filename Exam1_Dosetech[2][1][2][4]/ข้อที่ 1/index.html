@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
+  integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <div>
+        <button  class='greeting-button'>Good Morning</button>
+        <button class='greeting-button'>Good Afternoon</button>
+        <button class='greeting-button'>Good Night</button>
+        <button class='dont-click-me'>Don’t Click Me</button>
+    </div>
+    <script >
+        //เขียน Code Javascript โดยเมื่อผู้ใช้กดที่ Button ที่มี class greeting-button 
+        // ให้ Pop up ค่า Text ใน Button ออกมา ( Hint : $(‘.greeting-button’) )
+           
+        $('.greeting-button').click((e)=>{
+            console.log(e)
+            alert(e.target.innerText)
+        })
+
+        
+      
+    </script>
+    
+
+
+
+
+
+</body>
+
+</html>
